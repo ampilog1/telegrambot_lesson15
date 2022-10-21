@@ -1,5 +1,5 @@
 import telebot
-from telebot_parser import parser
+from telebot_parser import parce
 
 TOKEN = '5629751285:AAG5C2UGTV4-U85lu1n5aihkLOp8P0ieU2I'
 
