@@ -16,7 +16,7 @@ def send_welcome(message):
 def timer(message):
     for i in range(5):
         time.sleep(1)
-        bot.send_message(message.chat.id, f'{i+1}')
+        bot.send_message(message.chat.id, f'{i + 1}')
 
 
 @bot.message_handler(commands=['say'])
@@ -24,7 +24,7 @@ def say(message):
     print(message.text.split(' ')[1:])
     print(message.text.split(' '))
     text = ' '.join(message.text.split(' ')[1:])
-    bot.reply_to(message,  f'***{text.upper()}!***')
+    bot.reply_to(message, f'***{text.upper()}!***')
 
 
 @bot.message_handler(commands=['admin'], func=lambda message: message.from_user.username == 'Ampilog')
@@ -44,7 +44,6 @@ def send_sticker(message):
 def reverse_text(message):
     text = message.text[::-1]
     bot.reply_to(message, text)
-
 
 
 bot.infinity_polling()

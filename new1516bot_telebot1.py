@@ -17,3 +17,21 @@ def map_site(message):
     q = parce()
     for key in q:
         bot.send_message(chat_id, f'{key} - {q[key]}')
+
+
+@bot.message_handler(commands=['say'])
+def say(message):
+    print(message.text.split(' ')[1:])
+    print(message.text.split(' '))
+    text = ' '.join(message.text.split(' ')[1:])
+    bot.reply_to(message, f'***{text.upper()}!***')
+
+
+@bot.message_handler(commands=['timer'])
+def timer(message):
+    for i in range(5):
+        time.sleep(1)
+        bot.send_message(message.chat.id, f'{i + 1}')
+
+
+bot.infinity_polling()
